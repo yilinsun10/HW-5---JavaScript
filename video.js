@@ -17,11 +17,11 @@ window.addEventListener("load", function () {
 	});
 	/*slower and faster*/
 	this.document.getElementById("slower").addEventListener("click", function () {
-		video.playbackRate *= (1 - 0.1);
+		video.playbackRate *= (1-0.1);
 		console.log("Current speed: ", video.playbackRate.toFixed(5));
 	});
 	this.document.getElementById("faster").addEventListener("click", function () {
-		video.playbackRate *= (1 + 0.1);
+		video.playbackRate *= (1+0.1);
 		console.log("Current speed: ", video.playbackRate.toFixed(5));
 	});
 	/*skip ahead*/
@@ -34,31 +34,26 @@ window.addEventListener("load", function () {
 		console.log("Current location: ", video.currentTime.toFixed(2));
 	});
 	/*mute and unmute*/
-	this.document.getElementById("mute").addEventListener("click", function () {
-		video.muted = !video.muted;
-		this.textContent = video.muted ? "Unmute" : "Mute";
-		console.log(video.muted ? "Muted" : "Unmuted");
+	this.document.getElementById("mute").addEventListener("click", function() {
+			video.muted = !video.muted;
+			this.textContent = video.muted ? "Unmute" : "Mute";
+			console.log(video.muted ? "Muted" : "Unmuted");
 	});
 
 	/*volume slider*/
-	this.document.getElementById("slider").addEventListener("input", function () {
-		video.volume = this.value / 100;
-		document.getElementById("volume").innerText = this.value + "%";
+	this.document.getElementById("slider").addEventListener("input", function() {
+        video.volume = this.value / 100;
+        document.getElementById("volume").innerText = this.value + "%";
 	});
 
 	/*two style changes*/
-	this.document.getElementById("vintage").addEventListener("click", function () {
+	this.document.getElementById("vintage").addEventListener("click", function(){
 		video.classList.add("oldSchool");
 		console.log("Applied Old School style");
 	});
-	this.document.getElementById("orig").addEventListener("click", function () {
+	this.document.getElementById("orig").addEventListener("click", function(){
 		video.classList.remove("oldSchool");
 		console.log("Applied Original style");
 	});
 
 });
-
-// document.querySelector("#play").addEventListener("click", function() {
-// 	console.log("Play Video");
-// });
-
